@@ -22,6 +22,13 @@
   <main>
     <section class="phonebook">
     <div class="container">
+      <form class="search-form" action="" method="GET">
+        <div class="form-group">
+          <input class="search-input" type="text" name="search" id="search">
+          <input class="search-submit" type="submit" value="Search">
+        </div>
+      </form>
+
       <table class="table">
         <tr class="table-row">
           <th class="table-heading">Name</th>
@@ -33,6 +40,6 @@
     </div>
     </section>
   </main>
-  
+
 </body>
 </html>
