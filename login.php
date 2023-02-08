@@ -1,4 +1,30 @@
 <?php
+session_start();
+
+require('app/app.php');
+
+if (is_user_authenticated()) {
+  redirect('admin/');
+}
+
+$status = '';
+
+if (is_post()) {
+  $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+  $password = sanitize($_POST['password']);
+
+  if (authenticate_user($email, $password)) {
+    $_SESSION['email'] = $email;
+    redirect('admin/');
+  } 
+  else {
+    $status = "The provided data didn't not work";
+  }
+
+  if ($email == false) {
+    $status = 'Please enter a valid email address';
+  }
+}
 
 ?>
 
@@ -25,8 +51,11 @@
                 <input class="login-input" type="text" name="email" id="email" placeholder="Enter your email" />
                 <input class="login-input" type="password" name="password" id="password" placeholder="Enter your password"/>
                 <input class="submit-btn" type="submit" name="login" value="Login" />
-              </div>
             </form>
+            
+            <div class="status">
+              <?php echo $status?> 
+            </div>
         </div>
     </section>
   </main>

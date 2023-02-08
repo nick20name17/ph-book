@@ -141,3 +141,10 @@ section {
   background-color: #5448ff;
   transition: 0.3s;
 }
+
+.status {
+  color: #de2d2d;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
