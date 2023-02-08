@@ -3,3 +3,72 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: sans-serif;
+}
+
+.header {
+  padding: 30px 0;
+  background-color: #f2f1ff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.header__btn {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  background-color: #2f20ff;
+  padding: 15px 36px;
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.header__btn:hover {
+  background-color: #5448ff;
+  transition: 0.3s;
+}
+
+.phonebook {
+  padding: 60px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f2f1ff;
+}
+
+.table-row:hover {
+  background-color: #e4e2ff;
+}
+
+.table-heading,
+.table-item {
+  font-size: 20px;
+  padding: 15px;
+}
+
+.table-heading {
+  background-color: #5448ff;
+  color: #fff;
+}
