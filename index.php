@@ -15,7 +15,7 @@
   <header class="header">
     <div class="container header__container">
       <h1 class="title">Phone Book</h1>
-      <a class="header__btn" href="">Log in</a>
+      <a class="header__btn" href="login.php">Log in</a>
     </div>
   </header>
 
@@ -27,7 +27,7 @@
           <input class="search-input" type="text" name="search" id="search">
           <input class="search-submit" type="submit" value="Search">
         </div>
-      </form>
+      </form> 
 
       <table class="table">
         <tr class="table-row">

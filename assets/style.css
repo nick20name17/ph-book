@@ -44,7 +44,7 @@ body {
   transition: 0.3s;
 }
 
-.phonebook {
+section {
   padding: 60px 0;
 }
 
@@ -105,6 +105,39 @@ body {
 }
 
 .search-submit:hover {
+  background-color: #5448ff;
+  transition: 0.3s;
+}
+
+.login-form {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.login-input {
+  padding: 18px 20px;
+  background-color: #f2f1ff;
+}
+
+.login-input,
+.submit-btn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  padding: 18px 50px;
+  background-color: #2f20ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
   background-color: #5448ff;
   transition: 0.3s;
 }
