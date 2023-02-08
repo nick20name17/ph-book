@@ -41,6 +41,7 @@ if (is_post()) {
   <header class="header">
     <div class="container header__container">
       <h1 class="title">Login</h1>
+      <a class="header__btn" href="index.php">Home</a>
     </div>
   </header>
 
