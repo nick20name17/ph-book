@@ -50,16 +50,18 @@ class MySqlDataProvider extends DataProvider  {
         );
     }
     
-    // public function update_term($original_term, $new_term, $definition) {
-    //     $this->execute(
-    //         'UPDATE terms SET term = :term, definition = :definition WHERE id = :id',
-    //         [
-    //             ':term' => $new_term,
-    //             ':definition' => $definition,
-    //             ':id' => $original_term
-    //         ]
-    //     );
-    // }
+    public function update($original, $new_name, $new_surname, $new_number, $new_comment) {
+        $this->execute(
+            'UPDATE people SET name = :name, surname = :surname, number = :number, comment = :comment WHERE id = :id',
+            [
+                ':name' => $new_name,
+                ':surname' => $new_surname,
+                ':number' => $new_number,
+                ':comment' => $new_comment,
+                ':id' => $original
+            ]
+        );
+    }
     
     public function delete_term($item) {
         $this->execute(

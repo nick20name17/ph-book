@@ -55,13 +55,19 @@ if (isset($_GET['search'])) {
           <th class="table-heading">Number</th>
           <th class="table-heading">Comment</th>
           <th class="table-heading"></th>
+          <th class="table-heading"></th>
         <?php foreach ($items as $item) : ?>
           <tr class="table-row">
             <td class="table-item"><?= $item->name ?></td>
             <td class="table-item"><?= $item->surname ?></td>
             <td class="table-item"><?= $item->number ?></td>
             <td class="table-item"><?= $item->comment ?></td>
-            <td><a class="link delete-link" href="delete.php?key=<?= $item->id ?>">Delete</a></td>
+            <td>
+              <a class="link table-link edit-link" href="edit.php?key=<?= $item->id ?>">Edit</a>
+            </td>
+            <td>
+              <a class="link table-link delete-link" href="delete.php?key=<?= $item->id ?>">Delete</a>
+            </td>
           </tr>
         <?php endforeach; ?>   
       </table>

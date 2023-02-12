@@ -25,9 +25,9 @@ class Data {
         return self::$ds->add_term($name, $surname, $number, $comment);
     }
     
-    // static public function update_term($original_term, $new_term, $definition) {
-    //     return self::$ds->update_term($original_term, $new_term, $definition);
-    // }
+    static public function update($original, $new_name, $new_surname, $new_number, $new_comment) {
+        return self::$ds->update($original, $new_name, $new_surname, $new_number, $new_comment);
+    }
     
     static public function delete_term($term) {
         return self::$ds->delete_term($term);

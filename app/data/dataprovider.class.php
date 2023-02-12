@@ -24,7 +24,7 @@ class DataProvider
     {
     }
 
-    public function update_term($original_term, $new_term, $definition)
+    public function update($original, $new_name, $new_surname, $new_number, $new_comment)
     {
     }
 

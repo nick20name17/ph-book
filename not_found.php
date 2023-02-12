@@ -17,7 +17,7 @@
 
   <section class="phonebook">
     <div class="container">
-      <div class="Title">
+      <div class="title">
             That doesn't exist.
       </div>
     </div>

@@ -180,11 +180,23 @@ section {
   transition: 0.3s;
 }
 
-.delete-link {
+.link:hover {
+  color: #241ab1;
+  transition: 0.3s;
+}
+
+.table-link {
   text-transform: capitalize;
 }
 
-.link:hover {
-  color: #5448ff;
-  transition: 0.3s;
+.edit-link {
+  color: #2f20ff;
+}
+
+.delete-link {
+  color: #ff2020;
+}
+
+.delete-link:hover {
+  color: #b01616;
 }
