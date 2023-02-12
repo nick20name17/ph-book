@@ -45,7 +45,7 @@ $data = Data::get_terms();
           <th class="table-heading">Number</th>
           <th class="table-heading">Comment</th>
         <?php foreach ($data as $item) : ?>
-          <tr>
+          <tr class="table-row">
               <td class="table-item"><?= $item->name ?></td>
               <td class="table-item"><?= $item->surname ?></td>
               <td class="table-item"><?= $item->number ?></td>
