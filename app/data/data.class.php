@@ -13,13 +13,13 @@ class Data {
         return self::$ds->get_terms();
     }
     
-    // static public function get_term($term) {
-    //     return self::$ds->get_term($term);
-    // }
+    static public function get_term($term) {
+        return self::$ds->get_term($term);
+    }
     
-    // static public function search_terms($search) {
-    //     return self::$ds->search_terms($search);
-    // }
+    static public function search_terms($search) {
+        return self::$ds->search_terms($search);
+    }
     
     static public function add_term($name, $surname, $number, $comment) {
         return self::$ds->add_term($name, $surname, $number, $comment);

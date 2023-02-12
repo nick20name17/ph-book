@@ -5,40 +5,38 @@ class MySqlDataProvider extends DataProvider  {
         return $this->query('SELECT * FROM people');
     }
     
-    // public function get_term($name) {
-    //     $db = $this->connect();
+    public function get_term($name) {
+        $db = $this->connect();
 
-    //     if ($db == null) {
-    //         return;
-    //     }
+        if ($db == null) {
+            return;
+        }
 
-    //     $sql = 'SELECT * FROM people WHERE id = :id';
-    //     $smt = $db->prepare($sql);
+        $sql = 'SELECT * FROM people WHERE id = :id';
+        $smt = $db->prepare($sql);
 
-    //     $smt->execute([
-    //         ':id' => $name,
-    //     ]);
+        $smt->execute([
+            ':id' => $name,
+        ]);
 
-    //     $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
+        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
 
-    //     $smt = null;
-    //     $db = null;
+        $smt = null;
+        $db = null;
 
-    //     if (empty($data)) {
-    //         return;
-    //     }
+        if (empty($data)) {
+            return;
+        }
 
-        
-
-    //     return $data[0];
-    // }
+        return $data[0];
+    }
     
-    // public function search_terms($search) {
-    //     return $this->query(
-    //         'SELECT * FROM terms WHERE term LIKE :search OR definition LIKE :search',
-    //         [':search' => '%'.$search.'%']
-    //     );
-    // }
+    public function search_terms($search) {
+        return $this->query(
+            'SELECT * FROM people WHERE name LIKE :search OR surname LIKE :search',
+            [':search' => '%'.$search.'%']
+        );
+    }
     
     public function add_term($name, $surname, $number, $comment) {
         $this->execute(

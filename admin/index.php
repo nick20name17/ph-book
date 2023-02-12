@@ -3,8 +3,18 @@ session_start();
 require('../app/app.php');
 
 ensure_user_is_authenticated();
+
 $data = Data::get_terms();
 
+if (isset($_GET['search'])) {
+  $items = Data::search_terms($_GET['search']);
+
+  $heading = 'Search Results for ' . '<span>' . $_GET['search'] . '</span>';
+} else {
+  $items = $data;
+
+  $heading = 'Phone Book Admin';
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +29,7 @@ $data = Data::get_terms();
 <body>
   <header class="header">
     <div class="container header__container">
-      <h1 class="title">Phone Book Admin</h1>
+      <h1 class="title"><?= $heading ?></h1>
       <a class="header__btn" href="../logout.php">Log out</a>
     </div>
   </header>
@@ -44,12 +54,12 @@ $data = Data::get_terms();
           <th class="table-heading">Surname</th>
           <th class="table-heading">Number</th>
           <th class="table-heading">Comment</th>
-        <?php foreach ($data as $item) : ?>
+        <?php foreach ($items as $item) : ?>
           <tr class="table-row">
-              <td class="table-item"><?= $item->name ?></td>
-              <td class="table-item"><?= $item->surname ?></td>
-              <td class="table-item"><?= $item->number ?></td>
-              <td class="table-item"><?= $item->comment ?></td>
+            <td class="table-item"><?= $item->name ?></td>
+            <td class="table-item"><?= $item->surname ?></td>
+            <td class="table-item"><?= $item->number ?></td>
+            <td class="table-item"><?= $item->comment ?></td>
           </tr>
         <?php endforeach; ?>   
       </table>

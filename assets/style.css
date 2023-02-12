@@ -27,6 +27,9 @@ body {
 .title {
   font-size: 48px;
 }
+.title span {
+  color: #2f20ff;
+}
 
 .header__btn {
   text-decoration: none;
