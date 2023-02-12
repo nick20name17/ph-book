@@ -1,6 +1,6 @@
 <?php
 
-class GlossaryTerm {
+class Contact {
     public $id;
     public $name;
     public $surname;

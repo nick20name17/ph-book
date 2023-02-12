@@ -1,6 +1,6 @@
 <?php
 
-require('glossaryterm.class.php');
+require('contact.class.php');
 
 class DataProvider
 {
@@ -8,27 +8,27 @@ class DataProvider
     {
     }
 
-    public function get_terms()
+    public function get_contacts()
     {
     }
 
-    public function get_term($term)
+    public function get_contact($contact)
     {
     }
 
-    public function search_terms($search)
+    public function search_contacts($search)
     {
     }
 
-    public function add_term($name, $surname, $number, $comment)
+    public function add_contact($name, $surname, $number, $comment)
     {
     }
 
-    public function update($original, $new_name, $new_surname, $new_number, $new_comment)
+    public function update_contact($original, $new_name, $new_surname, $new_number, $new_comment)
     {
     }
 
-    public function delete_term($term)
+    public function delete_contact($contact)
     {
     }
 }

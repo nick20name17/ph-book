@@ -18,7 +18,7 @@ if (is_post()) {
     redirect('admin/');
   } 
   else {
-    $status = "The provided data didn't not work";
+    $status = "The provided data didn't work";
   }
 
   if ($email == false) {

@@ -14,7 +14,7 @@ if (is_post()) {
     if (empty($name) || empty($surname) || empty($number) || empty($comment)) {
         // TODO: display message
     } else {
-        Data::add_term($name, $surname, $number, $comment);
+        Data::add_contact($name, $surname, $number, $comment);
         redirect('index.php');
     }
 }

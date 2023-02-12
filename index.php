@@ -1,10 +1,10 @@
 <?php
 require('app/app.php');
 
-$data = Data::get_terms();
+$data = Data::get_contacts();
 
 if (isset($_GET['search'])) {
-  $items = Data::search_terms($_GET['search']);
+  $items = Data::search_contacts($_GET['search']);
 
   $heading = 'Search Results for ' . '<span>' . $_GET['search'] . '</span>';
 } else {

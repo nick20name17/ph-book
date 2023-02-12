@@ -12,7 +12,7 @@ if (is_get()) {
         die();
     }
 
-    $contact = Data::get_term($key);
+    $contact = Data::get_contact($key);
 
     if ($contact === false) {
         redirect('../not_found.php');
@@ -30,7 +30,7 @@ if (is_post()) {
     if (empty($name) || empty($surname) || empty($number) || empty($comment) || empty($original)) {
         // TODO: display message
     } else {
-        Data::update($original, $name, $surname, $number, $comment);
+        Data::update_contact($original, $name, $surname, $number, $comment);
         redirect('index.php');
     }
 }

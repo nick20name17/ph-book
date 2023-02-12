@@ -8,20 +8,20 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
   <header class="header">
     <div class="container header__container">
       <h1 class="title">Not Found</h1>
     </div>
   </header>
 
-  <section class="phonebook">
-    <div class="container">
-      <div class="title">
-            That doesn't exist.
+  <main>
+    <section class="phonebook">
+      <div class="container">
+        <div class="title">
+              That doesn't exist.
+        </div>
       </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
 </body>
 </html>

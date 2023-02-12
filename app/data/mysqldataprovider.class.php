@@ -1,11 +1,11 @@
 <?php
 
 class MySqlDataProvider extends DataProvider  {
-    public function get_terms() {
+    public function get_contacts() {
         return $this->query('SELECT * FROM people');
     }
     
-    public function get_term($name) {
+    public function get_contact($name) {
         $db = $this->connect();
 
         if ($db == null) {
@@ -19,7 +19,7 @@ class MySqlDataProvider extends DataProvider  {
             ':id' => $name,
         ]);
 
-        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
+        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'Contact');
 
         $smt = null;
         $db = null;
@@ -31,14 +31,15 @@ class MySqlDataProvider extends DataProvider  {
         return $data[0];
     }
     
-    public function search_terms($search) {
+    public function search_contacts($search) {
         return $this->query(
-            'SELECT * FROM people WHERE name LIKE :search OR surname LIKE :search',
+            'SELECT * FROM people WHERE name LIKE :search OR surname LIKE :search 
+             OR number LIKE :search OR comment LIKE :search',
             [':search' => '%'.$search.'%']
         );
     }
     
-    public function add_term($name, $surname, $number, $comment) {
+    public function add_contact($name, $surname, $number, $comment) {
         $this->execute(
             'INSERT INTO people (name, surname, number, comment) VALUES (:name, :surname, :number, :comment)',
             [
@@ -50,7 +51,7 @@ class MySqlDataProvider extends DataProvider  {
         );
     }
     
-    public function update($original, $new_name, $new_surname, $new_number, $new_comment) {
+    public function update_contact($original, $new_name, $new_surname, $new_number, $new_comment) {
         $this->execute(
             'UPDATE people SET name = :name, surname = :surname, number = :number, comment = :comment WHERE id = :id',
             [
@@ -63,7 +64,7 @@ class MySqlDataProvider extends DataProvider  {
         );
     }
     
-    public function delete_term($item) {
+    public function delete_contact($item) {
         $this->execute(
             'DELETE FROM people WHERE id = :id',
             [':id' => $item]
@@ -86,7 +87,7 @@ class MySqlDataProvider extends DataProvider  {
             $query->execute($sql_parms);
         }
 
-        $data = $query->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
+        $data = $query->fetchAll(PDO::FETCH_CLASS, 'Contact');
 
         $query = null;
         $db = null;

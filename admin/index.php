@@ -4,10 +4,10 @@ require('../app/app.php');
 
 ensure_user_is_authenticated();
 
-$data = Data::get_terms();
+$data = Data::get_contacts();
 
 if (isset($_GET['search'])) {
-  $items = Data::search_terms($_GET['search']);
+  $items = Data::search_contacts($_GET['search']);
 
   $heading = 'Search Results for ' . '<span>' . $_GET['search'] . '</span>';
 } else {
@@ -57,18 +57,18 @@ if (isset($_GET['search'])) {
           <th class="table-heading"></th>
           <th class="table-heading"></th>
         <?php foreach ($items as $item) : ?>
-          <tr class="table-row">
-            <td class="table-item"><?= $item->name ?></td>
-            <td class="table-item"><?= $item->surname ?></td>
-            <td class="table-item"><?= $item->number ?></td>
-            <td class="table-item"><?= $item->comment ?></td>
-            <td>
-              <a class="link table-link edit-link" href="edit.php?key=<?= $item->id ?>">Edit</a>
-            </td>
-            <td>
-              <a class="link table-link delete-link" href="delete.php?key=<?= $item->id ?>">Delete</a>
-            </td>
-          </tr>
+        <tr class="table-row">
+          <td class="table-item"><?= $item->name ?></td>
+          <td class="table-item"><?= $item->surname ?></td>
+          <td class="table-item"><?= $item->number ?></td>
+          <td class="table-item"><?= $item->comment ?></td>
+          <td>
+            <a class="link table-link edit-link" href="edit.php?key=<?= $item->id ?>">Edit</a>
+          </td>
+          <td>
+            <a class="link table-link delete-link" href="delete.php?key=<?= $item->id ?>">Delete</a>
+          </td>
+        </tr>
         <?php endforeach; ?>   
       </table>
     </div>
