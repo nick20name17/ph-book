@@ -35,7 +35,7 @@
           <th class="table-heading">Surname</th>
           <th class="table-heading">Number</th>
           <th class="table-heading">Comment</th>
-        </tr>     
+        </tr>    
       </table>
     </div>
     </section>

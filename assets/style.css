@@ -78,6 +78,16 @@ section {
 }
 
 .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form {
+  min-width: 600px;
+}
+
+.form-group div {
   min-width: 300px;
   display: flex;
   align-items: center;
@@ -102,6 +112,10 @@ section {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0 5px 5px 0;
+}
+
+.submit-btn_add {
+  min-width: 100%;
 }
 
 .search-submit:hover {
@@ -142,9 +156,28 @@ section {
   transition: 0.3s;
 }
 
+.submit-btn_add {
+  min-width: 100%;
+}
+
 .status {
   color: #de2d2d;
   font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
+}
+
+.link {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2f20ff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: #5448ff;
+  transition: 0.3s;
 }

@@ -37,3 +37,9 @@ function sanitize($value) {
 
     return $temp;
 }
+
+function ensure_user_is_authenticated() {
+    if (!is_user_authenticated()) {
+      redirect('../login.php');
+    }
+}

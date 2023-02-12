@@ -1,4 +1,10 @@
 <?php
+session_start();
+require('../app/app.php');
+
+ensure_user_is_authenticated();
+$data = Data::get_terms();
+
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +29,12 @@
     <div class="container">
       <form class="search-form" action="" method="GET">
         <div class="form-group">
-          <input class="search-input" type="text" name="search" id="search">
-          <input class="search-submit" type="submit" value="Search">
+          <div>
+            <input class="search-input" type="text" name="search" id="search">
+            <input class="search-submit" type="submit" value="Search">
+          </div>
+
+          <a class="link" href="create.php" >Add new</a>
         </div>
       </form> 
 
@@ -34,7 +44,15 @@
           <th class="table-heading">Surname</th>
           <th class="table-heading">Number</th>
           <th class="table-heading">Comment</th>
-        </tr>     
+        </tr>  
+        <?php foreach ($data as $item) : ?>
+          <tr>
+              <td class="table-item"><?= $item->name ?></td>
+              <td class="table-item"><?= $item->surname ?></td>
+              <td class="table-item"><?= $item->number ?></td>
+              <td class="table-item"><?= $item->comment ?></td>
+          </tr>
+        <?php endforeach; ?>   
       </table>
     </div>
     </section>
