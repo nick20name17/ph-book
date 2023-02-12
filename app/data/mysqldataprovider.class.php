@@ -61,12 +61,12 @@ class MySqlDataProvider extends DataProvider  {
     //     );
     // }
     
-    // public function delete_term($term) {
-    //     $this->execute(
-    //         'DELETE FROM terms WHERE id = :id',
-    //         [':id' => $term]
-    //     );
-    // }
+    public function delete_term($item) {
+        $this->execute(
+            'DELETE FROM people WHERE id = :id',
+            [':id' => $item]
+        );
+    }
 
     private function query($sql, $sql_parms = []) {
         $db = $this->connect();

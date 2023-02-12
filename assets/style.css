@@ -180,6 +180,10 @@ section {
   transition: 0.3s;
 }
 
+.delete-link {
+  text-transform: capitalize;
+}
+
 .link:hover {
   color: #5448ff;
   transition: 0.3s;

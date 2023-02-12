@@ -29,7 +29,7 @@ class Data {
     //     return self::$ds->update_term($original_term, $new_term, $definition);
     // }
     
-    // static public function delete_term($term) {
-    //     return self::$ds->delete_term($term);
-    // }
+    static public function delete_term($term) {
+        return self::$ds->delete_term($term);
+    }
 }
