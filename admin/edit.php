@@ -27,8 +27,8 @@ if (is_post()) {
     $comment = sanitize($_POST['comment']);
     $original = sanitize($_POST['original-contact']);
 
-    if (empty($name) || empty($surname) || empty($number) || empty($comment) || empty($original)) {
-        // TODO: display message
+    if (empty($name) || empty($surname) || empty($number) || empty($comment)) {
+        return;
     } else {
         Data::update_contact($original, $name, $surname, $number, $comment);
         redirect('index.php');
